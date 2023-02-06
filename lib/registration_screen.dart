@@ -1,3 +1,4 @@
+import 'package:febacademy/home_screen.dart';
 import 'package:febacademy/login_screen.dart';
 import 'package:flutter/material.dart';
 class RegistrationScreen extends StatefulWidget {
@@ -44,6 +45,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 height: 30,
               ),
               TextFormField(
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  suffixIcon: const Icon(Icons.phone),
+                  contentPadding:
+                  const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  label: const Text("Phone"),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              TextFormField(
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
                   suffixIcon: const Icon(Icons.password),
@@ -59,22 +75,28 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 height: 30,
               ),
               TextFormField(
-                keyboardType: TextInputType.phone,
+                keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
-                  suffixIcon: const Icon(Icons.phone),
+                  suffixIcon: const Icon(Icons.password),
                   contentPadding:
                   const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  label: const Text("Phone"),
+                  label: const Text("Confirm Password"),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 30,
               ),
               MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
+
+                },
                 color: Colors.red,
                 child: const Text(
                   "Sign Up",

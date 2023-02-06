@@ -1,3 +1,4 @@
+import 'package:febacademy/home_screen.dart';
 import 'package:febacademy/registration_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               TextFormField(
                 keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
                 decoration: InputDecoration(
                   suffixIcon: const Icon(Icons.password),
                   contentPadding:
@@ -60,7 +62,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 50,
               ),
               MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
+
+                },
                 color: Colors.red,
                 child: const Text(
                   "Login",
@@ -83,7 +91,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => RegistrationScreen()));
+                              builder: (context) =>
+                                  RegistrationScreen()));
                     },
                     child: const Text(
                       "   Sign Up",
