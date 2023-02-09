@@ -14,9 +14,9 @@ class _BasicWidgetScreenState extends State<BasicWidgetScreen> {
 
 
   final _listOfWidgetScreens =[
-    GridViewScreen(),
-    ListViewScreen(),
-    ToastScreen()
+    const GridViewScreen(),
+    const ListViewScreen(),
+    const ToastScreen()
   ];
 
 
@@ -35,7 +35,7 @@ class _BasicWidgetScreenState extends State<BasicWidgetScreen> {
         elevation: 5,
         currentIndex: selectedIndex,
         onTap: onItemTapped,
-        items: [
+        items: const [
         BottomNavigationBarItem(
             icon: Icon(Icons.grid_3x3),
           label: 'Grid View'

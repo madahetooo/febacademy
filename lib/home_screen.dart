@@ -1,4 +1,5 @@
 import 'package:febacademy/basic_widget_screen.dart';
+import 'package:febacademy/bmi_calculator.dart';
 import 'package:febacademy/grid_view_screen.dart';
 import 'package:febacademy/listview_screen.dart';
 import 'package:febacademy/toast_screen.dart';
@@ -127,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>GridViewScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BMICalculator()));
                   },
                   child: Container(
                     padding: EdgeInsets.all(20),
