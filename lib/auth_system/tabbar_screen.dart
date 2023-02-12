@@ -1,5 +1,5 @@
-import 'package:febacademy/login_screen.dart';
-import 'package:febacademy/registration_screen.dart';
+import 'package:febacademy/auth_system/login_screen.dart';
+import 'package:febacademy/auth_system/registration_screen.dart';
 import 'package:flutter/material.dart';
 class TabbarScreen extends StatelessWidget {
   const TabbarScreen({Key? key}) : super(key: key);

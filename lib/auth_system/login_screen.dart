@@ -1,17 +1,19 @@
 import 'package:febacademy/home_screen.dart';
-import 'package:febacademy/login_screen.dart';
+import 'package:febacademy/auth_system/registration_screen.dart';
 import 'package:flutter/material.dart';
-class RegistrationScreen extends StatefulWidget {
-  const RegistrationScreen({Key? key}) : super(key: key);
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<RegistrationScreen> createState() => _RegistrationScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -32,7 +34,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   decoration: InputDecoration(
                     suffixIcon: const Icon(Icons.email),
                     contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                     label: const Text("Email or Phone"),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5),
@@ -43,26 +45,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   height: 30,
                 ),
                 TextFormField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    suffixIcon: const Icon(Icons.phone),
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                    label: const Text("Phone"),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                TextFormField(
                   keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
                   decoration: InputDecoration(
                     suffixIcon: const Icon(Icons.password),
                     contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                     label: const Text("Password"),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5),
@@ -70,22 +58,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                 ),
                 const SizedBox(
-                  height: 30,
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(
-                    suffixIcon: const Icon(Icons.password),
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                    label: const Text("Confirm Password"),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
+                  height: 50,
                 ),
                 MaterialButton(
                   onPressed: () {
@@ -95,7 +68,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   },
                   color: Colors.red,
                   child: const Text(
-                    "Sign Up",
+                    "Login",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -109,14 +82,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Already have an account ?!"),
+                    const Text("Don't have an account ?!"),
                     GestureDetector(
                       onTap: () {
                         Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                            context, MaterialPageRoute(builder: (context) => RegistrationScreen()));
                       },
                       child: const Text(
-                        "   Sign In",
+                        "   Sign Up",
                         style: TextStyle(
                           color: Colors.red,
                           fontWeight: FontWeight.bold,

@@ -1,8 +1,7 @@
-import 'package:febacademy/basic_widget_screen.dart';
-import 'package:febacademy/bmi_calculator.dart';
-import 'package:febacademy/grid_view_screen.dart';
-import 'package:febacademy/listview_screen.dart';
-import 'package:febacademy/toast_screen.dart';
+import 'package:febacademy/basic_widgets/basic_widget_screen.dart';
+import 'package:febacademy/bmi_calculator/bmi_calculator.dart';
+import 'package:febacademy/todolist/todolist.dart';
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -156,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BasicWidgetScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>TodoList()));
                   },
                   child: Container(
                     padding: EdgeInsets.all(20),

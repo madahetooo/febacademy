@@ -1,6 +1,7 @@
-import 'package:febacademy/grid_view_screen.dart';
-import 'package:febacademy/listview_screen.dart';
-import 'package:febacademy/toast_screen.dart';
+
+import 'package:febacademy/basic_widgets/grid_view_screen.dart';
+import 'package:febacademy/basic_widgets/listview_screen.dart';
+import 'package:febacademy/basic_widgets/toast_screen.dart';
 import 'package:flutter/material.dart';
 class BasicWidgetScreen extends StatefulWidget {
   const BasicWidgetScreen({Key? key}) : super(key: key);

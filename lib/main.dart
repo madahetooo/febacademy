@@ -1,4 +1,4 @@
-import 'package:febacademy/login_screen.dart';
+import 'package:febacademy/auth_system/login_screen.dart';
 import 'package:febacademy/splash_screen.dart';
 import 'package:flutter/material.dart';
 

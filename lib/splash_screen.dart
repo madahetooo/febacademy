@@ -1,7 +1,6 @@
 import 'dart:async';
 
-import 'package:febacademy/login_screen.dart';
-import 'package:febacademy/tabbar_screen.dart';
+import 'package:febacademy/auth_system/tabbar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
