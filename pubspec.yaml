@@ -23,7 +23,11 @@ dependencies:
   path_provider: ^2.0.12
   path: ^1.8.2
   http: ^0.13.5
-  intl: ^0.18.0
+  intl: ^0.17.0
+  firebase_core: ^2.5.0
+  firebase_auth: ^4.2.6
+  google_sign_in: ^5.4.4
+
 
 dev_dependencies:
   flutter_test:

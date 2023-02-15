@@ -1,10 +1,13 @@
+import 'package:febacademy/auth_system/tabbar_screen.dart';
 import 'package:febacademy/basic_widgets/basic_widget_screen.dart';
 import 'package:febacademy/bmi_calculator/bmi_calculator.dart';
 import 'package:febacademy/todolist/todolist.dart';
 import 'package:febacademy/worldtimer_app/home_location_screen.dart';
 import 'package:febacademy/worldtimer_app/loading_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -86,6 +89,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ListTile(
                 title: Text('Logout'),
                 leading: Icon(Icons.logout),
+                onTap: ()async{
+                  await GoogleSignIn().signOut();
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>TabbarScreen()));
+                },
               ),
             ],
           ),

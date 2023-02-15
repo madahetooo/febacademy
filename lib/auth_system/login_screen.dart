@@ -1,6 +1,8 @@
-import 'package:febacademy/home_screen.dart';
 import 'package:febacademy/auth_system/registration_screen.dart';
+import 'package:febacademy/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -13,7 +15,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -33,8 +34,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     suffixIcon: const Icon(Icons.email),
-                    contentPadding:
-                        const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 20),
                     label: const Text("Email or Phone"),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5),
@@ -49,8 +50,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText: true,
                   decoration: InputDecoration(
                     suffixIcon: const Icon(Icons.password),
-                    contentPadding:
-                        const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 20),
                     label: const Text("Password"),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5),
@@ -61,10 +62,30 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 50,
                 ),
                 MaterialButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                  onPressed: () async {
+                    final _googleSignIn = GoogleSignIn();
+                    final googleAccount = await _googleSignIn.signIn();
 
+                    final googleCredential  = await googleAccount?.authentication;
+                    final authCredential = GoogleAuthProvider.credential(
+                      idToken: googleCredential?.idToken,
+                      accessToken: googleCredential?.accessToken
+                    );
+                    final firebaseUser = await FirebaseAuth.instance.signInWithCredential(authCredential);
+
+                    print(firebaseUser.user?.email);
+                    print(firebaseUser.user?.displayName);
+                    print(firebaseUser.user?.uid);
+                    print(firebaseUser.user?.emailVerified);
+                    print(firebaseUser.user?.photoURL);
+                    print(firebaseUser.user?.phoneNumber);
+                    print(firebaseUser.user?.isAnonymous);
+
+
+
+
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   color: Colors.red,
                   child: const Text(
@@ -86,7 +107,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     GestureDetector(
                       onTap: () {
                         Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (context) => RegistrationScreen()));
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegistrationScreen()));
                       },
                       child: const Text(
                         "   Sign Up",

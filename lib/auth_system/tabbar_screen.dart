@@ -1,11 +1,16 @@
 import 'package:febacademy/auth_system/login_screen.dart';
 import 'package:febacademy/auth_system/registration_screen.dart';
+import 'package:febacademy/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 class TabbarScreen extends StatelessWidget {
   const TabbarScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+     Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
     return MaterialApp(
       home: DefaultTabController(
       length: 2,
