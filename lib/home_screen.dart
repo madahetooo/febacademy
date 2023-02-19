@@ -1,7 +1,7 @@
 import 'package:febacademy/auth_system/tabbar_screen.dart';
 import 'package:febacademy/basic_widgets/basic_widget_screen.dart';
 import 'package:febacademy/bmi_calculator/bmi_calculator.dart';
-import 'package:febacademy/chat_app/ui/chats_screen.dart';
+import 'package:febacademy/chat_app/ui/chats_list_screen/chats_screen.dart';
 import 'package:febacademy/todolist/todolist.dart';
 import 'package:febacademy/worldtimer_app/home_location_screen.dart';
 import 'package:febacademy/worldtimer_app/loading_screen.dart';

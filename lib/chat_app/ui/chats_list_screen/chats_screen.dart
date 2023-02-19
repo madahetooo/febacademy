@@ -1,4 +1,4 @@
-import 'package:febacademy/chat_app/ui/widgets/chats_body.dart';
+import 'package:febacademy/chat_app/ui/chats_list_screen/widgets/chats_body.dart';
 import 'package:flutter/material.dart';
 class ChatsScreen extends StatefulWidget {
   const ChatsScreen({Key? key}) : super(key: key);

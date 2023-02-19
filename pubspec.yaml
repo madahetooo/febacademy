@@ -27,6 +27,10 @@ dependencies:
   firebase_core: ^2.5.0
   firebase_auth: ^4.2.6
   google_sign_in: ^5.4.4
+  firebase_storage: ^11.0.13
+  cloud_firestore: ^4.4.2
+  image_picker: ^0.8.6+2
+
 
 
 dev_dependencies:

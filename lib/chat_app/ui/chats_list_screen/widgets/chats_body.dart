@@ -1,8 +1,10 @@
 import 'package:febacademy/chat_app/model/chats_model.dart';
-import 'package:febacademy/chat_app/ui/message_screen.dart';
-import 'package:febacademy/chat_app/ui/widgets/chats_card_widget.dart';
-import 'package:febacademy/chat_app/ui/widgets/fill_outline_button.dart';
+import 'package:febacademy/chat_app/ui/message_screen/message_screen.dart';
+
 import 'package:flutter/material.dart';
+
+import 'chats_card_widget.dart';
+import 'fill_outline_button.dart';
 
 class ChatsBody extends StatefulWidget {
   const ChatsBody({Key? key}) : super(key: key);
