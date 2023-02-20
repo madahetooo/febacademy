@@ -2,9 +2,8 @@ import 'package:febacademy/auth_system/tabbar_screen.dart';
 import 'package:febacademy/basic_widgets/basic_widget_screen.dart';
 import 'package:febacademy/bmi_calculator/bmi_calculator.dart';
 import 'package:febacademy/chat_app/ui/chats_list_screen/chats_screen.dart';
+import 'package:febacademy/reverse_string_app/reverse_string_app.dart';
 import 'package:febacademy/todolist/todolist.dart';
-import 'package:febacademy/worldtimer_app/home_location_screen.dart';
-import 'package:febacademy/worldtimer_app/loading_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
@@ -251,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BasicWidgetScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ReverseStringApp()));
                   },
                   child: Container(
                     padding: EdgeInsets.all(20),
@@ -268,7 +267,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: Center(
                       child: Text(
-                        "Unit Test App",
+                        "Reverse String App",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
