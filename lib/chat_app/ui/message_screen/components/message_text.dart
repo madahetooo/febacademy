@@ -18,7 +18,7 @@ class MessageText extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           !(message.isSender)
               ? Text(
@@ -35,7 +35,7 @@ class MessageText extends StatelessWidget {
           Text(
             message.text,
             style:
-                TextStyle(color: message.isSender ? Colors.black : Colors.blue),
+                TextStyle(color: message.isSender ? Colors.black : Colors.black),
           )
         ],
       ),

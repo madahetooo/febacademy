@@ -79,12 +79,12 @@ class _ChatInputFieldState extends State<ChatInputField> {
                       final url = await ref.getDownloadURL();
 
                       Map<String, dynamic> document = {
-                        'image':url,
-                        'senderId' :user?.uid,
-                        'senderName' :user?.displayName,
-                        'senderImage' :user?.photoURL,
+                        'image': url,
+                        'senderId': user?.uid,
+                        'senderName': user?.displayName,
+                        'senderImage': user?.photoURL,
                         'type': 1,
-                        'time':DateTime.now(),
+                        'time': DateTime.now(),
                       };
                       firestore.collection('messages').add(document);
                       setState(() {
@@ -104,7 +104,7 @@ class _ChatInputFieldState extends State<ChatInputField> {
                 : const SizedBox(),
             messageController.text.isEmpty
                 ? IconButton(
-                    onPressed: () async{
+                    onPressed: () async {
                       XFile? file = await ImagePicker()
                           .pickImage(source: ImageSource.camera);
 
@@ -127,12 +127,12 @@ class _ChatInputFieldState extends State<ChatInputField> {
                       final url = await ref.getDownloadURL();
 
                       Map<String, dynamic> document = {
-                        'image':url,
-                        'senderId' :user?.uid,
-                        'senderName' :user?.displayName,
-                        'senderImage' :user?.photoURL,
+                        'image': url,
+                        'senderId': user?.uid,
+                        'senderName': user?.displayName,
+                        'senderImage': user?.photoURL,
                         'type': 1,
-                        'time':DateTime.now(),
+                        'time': DateTime.now(),
                       };
                       firestore.collection('messages').add(document);
                       setState(() {
@@ -147,18 +147,22 @@ class _ChatInputFieldState extends State<ChatInputField> {
                 : const SizedBox(),
             messageController.text.isNotEmpty
                 ? IconButton(
-                    onPressed: () async{
+                    onPressed: () async {
                       final user = FirebaseAuth.instance.currentUser;
                       final message = messageController.text;
+                      print(message);
 
                       final messageDoc = {
-                        'message' : message,
+                        'message': message,
                         'senderId': user!.uid,
                         'senderName': user.displayName,
-                        'time':DateTime.now(),
+                        'time': DateTime.now(),
                       };
                       final doc = await FirebaseFirestore.instance
-                          .collection('messages').add(messageDoc);
+                          .collection('messages')
+                          .add(messageDoc);
+                      print(doc.path);
+                      print(doc.id);
                     },
                     icon: const Icon(
                       Icons.send,

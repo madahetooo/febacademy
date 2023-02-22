@@ -28,18 +28,17 @@ class Message extends StatelessWidget {
       child: Container(
         child: Row(
           mainAxisAlignment: message.isSender
-          ? MainAxisAlignment.start
-          : MainAxisAlignment.end,
+          ? MainAxisAlignment.end
+          : MainAxisAlignment.start,
           children: [
             if(!message.isSender)...[
               CircleAvatar(
-                child: Image.network("assets/user.png"),
+                child: Image.asset("assets/user_5.png"),
                 radius: 18,
               ),
               SizedBox(width: 5.0,)
             ],
             messageContain(message,index),
-
           ],
         ),
       ),
