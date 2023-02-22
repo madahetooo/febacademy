@@ -2,6 +2,7 @@ import 'package:febacademy/auth_system/tabbar_screen.dart';
 import 'package:febacademy/basic_widgets/basic_widget_screen.dart';
 import 'package:febacademy/bmi_calculator/bmi_calculator.dart';
 import 'package:febacademy/chat_app/ui/chats_list_screen/chats_screen.dart';
+import 'package:febacademy/hero_animation/presentation/hero_animation_screen.dart';
 import 'package:febacademy/reverse_string_app/reverse_string_app.dart';
 import 'package:febacademy/todolist/todolist.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -268,6 +269,34 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Center(
                       child: Text(
                         "Reverse String App",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HeroAnimationScreen()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    margin: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black,width: 4),
+                        borderRadius: BorderRadius.circular(50),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.green,
+                              offset: Offset(6.0,6.0)
+                          )
+                        ]
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Hero Animation App",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
