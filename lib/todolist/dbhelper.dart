@@ -30,8 +30,7 @@ class DatabaseHelper {
   _initDatabase() async {
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     String path = join(documentDirectory.path, _databaseName);
-    return await openDatabase(path,
-        version: _databaseVersion, onCreate: _onCreate);
+    return await openDatabase(path, version: _databaseVersion, onCreate: _onCreate);
   }
 
   Future _onCreate(Database db, int version) async {
@@ -43,20 +42,33 @@ class DatabaseHelper {
       ''');
   }
 
-  Future<int?> insert(Map<String,dynamic>todo)async{
+  Future<int?> insert(Map<String, dynamic> todo) async {
     Database? db = await instance.database;
     return await db?.insert(table, todo);
   }
 
-  Future<List<Map<String,dynamic>>?> queryAllTodos() async{
+  Future<List<Map<String, dynamic>>?> queryAllTodos() async {
     Database? db = await instance.database;
-  return await db?.query(table);
+    return await db?.query(table);
   }
 
-  Future<int?> deleteTodo(int id) async{
+  Future<int?> deleteTodo(int id) async {
     Database? db = await instance.database;
-  return await db?.delete(table,where: "id=?", whereArgs: [id]);
+    return await db?.delete(table, where: "id=?", whereArgs: [id]);
   }
 
+  // Future<int?> updateTodo(int id, Map<String, dynamic> todo) async {
+  //   Database? db = await instance.database;
+  //   return await db?.update(table, todo, where: "$columnId = ?", whereArgs: [id]);
+  // }
+  Future<int?> updateTodo(int id, String newTodo) async {
+    final db = await database;
+    return await db?.update(
+      table,
+      {DatabaseHelper.columnName: newTodo},
+      where: '${DatabaseHelper.columnId} = ?',
+      whereArgs: [id],
+    );
+  }
 
 }
